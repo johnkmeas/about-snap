@@ -12,10 +12,10 @@ get_header(); ?>
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 	
 		    <main class="main small-12 large-12 medium-12 cell" role="main">
-				<h2>Font page</h2>
+
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
+			    	<?php get_template_part( 'parts/loop', 'landing-page' ); ?>
 			    
 			    <?php endwhile; endif; ?>							
 			    					
