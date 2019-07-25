@@ -36,6 +36,8 @@ function custom_resource_rewrite_rules() {
     add_rewrite_rule('^(\w+)/category/([A-Za-z0-9\-\_]+)/?', 'category/$matches[2]/?post_type=$matches[1]', 'top');
 }
 add_action('init', 'custom_resource_rewrite_rules');
+
+add_post_type_support( 'page', 'excerpt' );
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
 

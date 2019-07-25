@@ -63,8 +63,32 @@
       $set = $section_type . '_set';
       include(locate_template('parts/loop-set.php'));
     ?>
-
-<a href="<?php echo get_post_type_archive_link('events'); ?>">Events</a>
+  </section>
+  <section>
+    <?php 
+    if( have_rows('event_types') ): ?>
+      <ul class="slides">
+        <?php while( have_rows('event_types') ): the_row(); 
+          $event = get_sub_field('event');
+          $event_title = get_sub_field('event_title');
+          if( $event ): 
+    
+          $post = $event;
+          setup_postdata( $post ); 
+        ?>
+          <div>
+            <h3><a href="<?php the_permalink(); ?>"><?php echo $event_title; ?></a></h3>
+            <div>
+              <?php the_excerpt(); ?>
+              <a href="<?php the_permalink(); ?>">Our <?php the_title(); ?> Events</a>
+            </div>
+            <?php the_post_thumbnail(); ?>
+          </div>
+          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+        <?php endif; ?>
+      <?php endwhile; ?>
+      </ul>
+    <?php endif; ?>
   </section>
 
 	<footer class="article-footer">

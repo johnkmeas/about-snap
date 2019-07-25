@@ -45,8 +45,9 @@ function joints_theme_support() {
 			'audio',             // audio
 			'chat'               // chat transcript
 		)
-	); 
-	
+	);
+
+
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
 	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );	
 	
