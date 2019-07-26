@@ -64,6 +64,7 @@ CSS file.
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 // Import your custom styles
+@include foundation-everything($prototype: true);
 @import "global";
 @import "settings";
 @import "about_snap";
