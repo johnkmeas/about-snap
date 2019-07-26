@@ -34,7 +34,7 @@
       <?php  the_field('main_content'); ?>
     </div>
     <div class="small-12 large-6 medium-4 cell">
-      <?php 
+      <?php
         $image = get_field('main_image');
         if( !empty($image) ): ?>
           <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -50,7 +50,7 @@
         <?php  the_field($section_type . '_heading'); ?></div>
       </h2>
     </div>
-    <?php 
+    <?php
       $set = $section_type . '_set';
       include(locate_template('parts/loop-row-set.php'));
     ?>
@@ -59,43 +59,30 @@
   <!-- Services Set Section -->
   <section>
     <?php $section_type = 'service'; ?>
+
     <div class="column text-center callout large">
       <h2>
         <?php  the_field($section_type . '_heading'); ?></div>
       </h2>
     </div>
-    <?php 
+    <?php
       $set = $section_type . '_set';
-      include(locate_template('parts/loop-set.php'));
+      include(locate_template('parts/loop-static-set.php'));
     ?>
   </section>
 
   <!-- Events Section -->
   <section>
-    <?php 
-    if( have_rows('event_types') ): ?>
-      <ul class="slides">
-        <?php while( have_rows('event_types') ): the_row(); 
-          $event = get_sub_field('event');
-          $event_title = get_sub_field('event_title');
-          if( $event ): 
-    
-          $post = $event;
-          setup_postdata( $post ); 
-        ?>
-          <div>
-            <h3><a href="<?php the_permalink(); ?>"><?php echo $event_title; ?></a></h3>
-            <div>
-              <?php the_excerpt(); ?>
-              <a href="<?php the_permalink(); ?>">Our <?php the_title(); ?> Events</a>
-            </div>
-            <?php the_post_thumbnail(); ?>
-          </div>
-          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-        <?php endif; ?>
-      <?php endwhile; ?>
-      </ul>
-    <?php endif; ?>
+		<?php $section_type = 'event'; ?>
+    <div class="column text-center callout large">
+      <h2>
+        <?php  the_field($section_type . '_heading'); ?></div>
+      </h2>
+    </div>
+    <?php
+      $set = $section_type . '_set';
+      include(locate_template('parts/loop-standard-set.php'));
+    ?>
   </section>
 
   <!-- About Us Section -->
@@ -105,11 +92,11 @@
         <?php the_field('about_title') ?>
       </h2>
       <?php $about = get_field('about_excerpt');
-        
-        if( $about ): 
-    
+
+        if( $about ):
+
         $post = $about;
-        setup_postdata( $post ); 
+        setup_postdata( $post );
       ?>
         <div>
           <div>
@@ -126,9 +113,9 @@
   <!-- Contact Us -->
   <section class="entry-content inner-content grid-x grid-margin-x grid-padding-x" itemprop="text">
     <div class="small-12 large-6 medium-8 cell">
-      <?php 
+      <?php
         $contact_message =  get_field('contact_us_message');
-        
+
         if($contact_message !== '' ){
           echo $contact_message;
         }else {
@@ -151,7 +138,7 @@
           endif;
         }
       ?>
-      <?php 
+      <?php
       $contact_submit = get_field('contact_cta_title') ?: 'contact us' ;
       echo do_shortcode("[contact-form-7 id='162' title='Contact form 1' submit 'contact']"); ?>
     </div>
@@ -160,7 +147,7 @@
 	<footer class="article-footer">
 		 <?php wp_link_pages(); ?>
 	</footer> <!-- end article footer -->
-						    
+
 	<?php comments_template(); ?>
-					
+
 </article> <!-- end article -->
