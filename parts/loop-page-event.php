@@ -10,8 +10,8 @@ $id = get_the_ID();
 	<header class="article-header">
 
     <?php 
-      $title = get_the_title();
-      $hero_title = '<h1 class="page-title">' .$title. '</h1>';
+      $page_title = get_the_title();
+      $hero_title = '<h1 class="page-title">' .$page_title. '</h1>';
       
       $content = get_field('hero_content');
       $hero_content = $hero_title . $content;
@@ -35,40 +35,35 @@ $id = get_the_ID();
         ?>
           <div>
             <div>
-              <?php the_excerpt(); ?>
+              <h2>Featured <?php echo $page_title; ?> Event</h2>
               <a href="<?php the_permalink(); ?>">More <?php the_title(); ?></a>
+              <div>
+                <?php the_excerpt(); ?>
+              </div>
             </div>
-
             <?php
-            the_post_thumbnail(); 
-            the_content();
+              $gallery = get_field('gallery', $post->ID);
+              set_query_var('$gallery', null);
+              include(locate_template('parts/loop-gallery.php'));
             ?>
           </div>
-          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+          <?php wp_reset_postdata();?>
         <?php endif; ?>
       </div>
     </section>
     <!-- Gallery Section -->
+
     <section>
+        <!-- Shout Out -->
+      <div class="column text-center callout large">
+        <h2><?php  the_field('main_gallery_title'); ?></h2>
+      </div>
       <?php
-      $images = get_field('main_gallery');
-      $size = 'full'; // (thumbnail, medium, large, full or custom size)
-
-      if( $images ): ?>
-          <ul class="event-gallery slick-slider"">
-              <?php foreach( $images as $image ): ?>
-                  <li>
-                  	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-                  </li>
-              <?php endforeach; ?>
-          </ul>
-      <?php endif; ?>
+      $gallery = get_field('main_gallery');
+      set_query_var('$gallery', null);
+      include(locate_template('parts/loop-masonry.php')); ?>
     </section>
-
-	<footer class="article-footer">
-		 <?php wp_link_pages(); ?>
-	</footer> <!-- end article footer -->
-
-	<?php comments_template(); ?>
-
+  <footer class="article-footer">
+     <?php wp_link_pages(); ?>
+  </footer> <!-- end article footer -->
 </article> 

@@ -18,13 +18,21 @@
 		<?php include(locate_template('parts/content-hero.php')); ?>
 	</header> <!-- end article header -->
 
+  <!-- Main Gallery -->
+  <section>
+  	<?php 
+      $gallery = get_field('main_gallery');
+      set_query_var('$gallery', null);
+      include(locate_template('parts/loop-gallery.php'));
+     ?>
+  </section>
+
   <!-- Shout Out -->
   <div class="column text-center callout large">
     <b>
-      <?php  the_field('main_heading'); ?></div>
+      <?php  the_field('main_heading'); ?>
     </b>
   </div>
-
   <!-- Main Section -->
 	<section>
 		<div  class="grid-container full">
@@ -51,7 +59,7 @@
 	    <?php $section_type = 'feature'; ?>
 	    <div class="column text-center callout large">
 	      <h2>
-	        <?php  the_field($section_type . '_heading'); ?></div>
+	        <?php  the_field($section_type . '_heading'); ?>
 	      </h2>
 	    </div>
 	    <?php
@@ -68,7 +76,7 @@
 
 	    <div class="column text-center callout large">
 	      <h2>
-	        <?php  the_field($section_type . '_heading'); ?></div>
+	        <?php  the_field($section_type . '_heading'); ?>
 	      </h2>
 	    </div>
 	    <?php
@@ -84,7 +92,7 @@
 			<?php $section_type = 'event'; ?>
 	    <div class="column text-center callout large">
 	      <h2>
-	        <?php  the_field($section_type . '_heading'); ?></div>
+	        <?php  the_field($section_type . '_heading'); ?>
 	      </h2>
 	    </div>
 	    <?php
