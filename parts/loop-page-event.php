@@ -2,18 +2,26 @@
 /**
  * Template part for displaying page content in page.php
  */
+$id = get_the_ID();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 
 	<header class="article-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
-	</header> <!-- end article header -->
 
-    <section class="entry-content" itemprop="text">
-      <?php the_post_thumbnail(); ?>
-	    <?php the_content(); ?>
-	  </section> <!-- end article section -->
+    <?php 
+      $title = get_the_title();
+      $hero_title = '<h1 class="page-title">' .$title. '</h1>';
+      
+      $content = get_field('hero_content');
+      $hero_content = $hero_title . $content;
+
+      $hero_media = get_the_post_thumbnail($id, 'large'); 
+      set_query_var('$hero_content', '$hero_media');
+    ?>
+
+    <?php include(locate_template('parts/content-hero.php')); ?>
+	</header> <!-- end article header -->
 
     <!-- Events Section -->
     <section>
@@ -47,7 +55,7 @@
       $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
       if( $images ): ?>
-          <ul>
+          <ul class="event-gallery slick-slider"">
               <?php foreach( $images as $image ): ?>
                   <li>
                   	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
@@ -63,4 +71,4 @@
 
 	<?php comments_template(); ?>
 
-</article> <!-- end a
+</article> 

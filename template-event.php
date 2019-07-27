@@ -8,7 +8,6 @@ get_header(); ?>
 <?php
   global $post;
 	$post_slug = $post->post_name;
-	echo $post_slug;
 ?>
 	<div class="content">
 

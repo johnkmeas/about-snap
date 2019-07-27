@@ -6,27 +6,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 
-  <!-- About the Fold -->
-	<!-- <header class="hero article-header">
-	</header> -->
-	 <!-- end article header -->
+  <!-- Hero Section - hero_content contains h1
+   -->
+  <header>
+  	<?php  
+	  	$hero_content = get_field('hero_content');
+	  	$hero_media = get_field('hero_media'); 
+	  	set_query_var('$hero_content', '$hero_media');
+  	?>
 
-  <!-- Hero Section -->
-  <section>
-		<div  class="grid-container full">
-			<div class="hero entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
-
-		    <div class="small-12 large-6 medium-6 cell">
-					<div class="grid-x grid-margin-x grid-padding-x">
-						<div class="small-12 large-10 large-offset-2 medium-12 cell page-title"><?php  the_field('hero_content'); ?></div>
-					</div>
-		    </div>
-		    <div class="small-12 large-6 medium-6 cell">
-		      <?php the_field('hero_media'); ?>
-		    </div>
-			</div>
-		</div>
-	</section> <!-- end article section -->
+		<?php include(locate_template('parts/content-hero.php')); ?>
+	</header> <!-- end article header -->
 
   <!-- Shout Out -->
   <div class="column text-center callout large">
