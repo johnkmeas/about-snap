@@ -8,7 +8,7 @@
 
   <!-- Hero Section - hero_content contains h1
    -->
-  <header>
+  <header class="section">
   	<?php  
 	  	$hero_content = get_field('hero_content');
 	  	$hero_media = get_field('hero_media'); 
@@ -27,16 +27,16 @@
      ?>
   </section>
 
-  <!-- Shout Out -->
-  <div class="column text-center callout large">
-    <b>
-      <?php  the_field('main_heading'); ?>
-    </b>
-  </div>
   <!-- Main Section -->
-	<section>
-		<div  class="grid-container full">
-		  <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
+  <section class="section">
+    <!-- Shout Out -->
+    <div class="column text-center callout large">
+      <b class="h3 subheader">
+        <?php  the_field('main_heading'); ?>
+      </b>
+    </div>
+    <div  class="grid-container full">
+      <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
 		    <div class="small-12 large-6 medium-8 cell">
 					<div class="grid-x grid-margin-x grid-padding-x">
 		      	<div class="small-12 large-10 large-offset-2 medium-12 cell page-title"><?php  the_field('main_content'); ?></div>
@@ -54,7 +54,7 @@
 	</section><!-- end article section -->
 
   <!-- Features Set Row -->
-  <section>
+  <section class="section">
 		<div  class="grid-container full">
 	    <?php $section_type = 'feature'; ?>
 	    <div class="column text-center callout large">
@@ -70,7 +70,7 @@
   </section>
 
   <!-- Services Set Section -->
-  <section>
+  <section class="section">
 		<div  class="grid-container full">
 	    <?php $section_type = 'service'; ?>
 
@@ -87,7 +87,7 @@
   </section>
 
   <!-- Events Section -->
-  <section>
+  <section class="section">
 		<div  class="grid-container full">
 			<?php $section_type = 'event'; ?>
 	    <div class="column text-center callout large">
@@ -103,9 +103,7 @@
   </section>
 
   <!-- About Us Section -->
-  <section>
-
-
+  <section class="section">
 		<div class="grid-container full">
       <?php $about = get_field('about_excerpt');
 						$about_title = get_field('about_title');
@@ -137,30 +135,30 @@
   </section>
 
   <!-- Contact Us -->
-	<section>
+	<section class="section">
 		<div class="grid-container full">
-			<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
 
-	      <?php
-	        $contact_message =  get_field('contact_us_message');
+        <?php
+          $contact_message =  get_field('contact_us_message');
 
-	        if($contact_message !== '' ){
-	          echo $contact_message;
-	        }else {
-	          $the_slug = 'contact-us';
-	          $args = array(
-	            'name'        => $the_slug,
-	            'post_type'   => 'page'
-	          );
-	          $post = get_posts($args)[0];
-	          if( $post ) :
-	            setup_postdata( $post );  ?>
+          if($contact_message !== '' ){
+            echo $contact_message;
+          }else {
+            $the_slug = 'contact-us';
+            $args = array(
+              'name'        => $the_slug,
+              'post_type'   => 'page'
+            );
+            $post = get_posts($args)[0];
+            if( $post ) :
+              setup_postdata( $post );  ?>
 
-	                <div class="large-12 column text-center callout large">
-										<h2 class="subheader"><?php the_title(); ?></h2>
-		              </div>
+                <div class="text-center callout large">
+                  <h2 class="subheader"><?php the_title(); ?></h2>
+                </div>
+          			<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
 
-								<div class="image small-12 large-6 cell">
+								<div class="image small-12 large-6 medium-6 cell">
 		              <?php the_post_thumbnail('large'); ?>
 		            </div>
 								<div class="small-12 large-4 medium-6 cell page-title">
@@ -169,7 +167,7 @@
 									$contact_submit = get_field('contact_cta_title') ?: 'contact us' ;
 									echo do_shortcode("[contact-form-7 id='162' title='Contact form 1' submit 'contact']"); ?>
 		            </div>
-							</div>
+							
 	            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
 	          endif;
 	        }

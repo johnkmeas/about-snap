@@ -7,7 +7,7 @@
             $image = get_sub_field('image');
             if( !empty($image) ): ?>
               <div class="cell">
-                <div class="card">
+                <div class="card card-feature">
                   <div class="grid-x grid-padding-x align-center">
                     <img class="" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt'] ?>" />
                   </div>

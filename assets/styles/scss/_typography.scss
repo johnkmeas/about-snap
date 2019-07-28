@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-heading;
+}
+
+p {
+  color: $color-dark;
+}
+
+.section-subheader {
+  > * {
+    text-align: center;
+  }
+}a {
+  color: $color-heading;
+}
+
+.subheader {
+  color: $color-heading;
+}
+
+.menu .active>a, 
+.menu .is-active>a {
+  background: none;
+  color: $color-heading;
+  border-bottom: 2px solid $color-heading;
+}
+
+.card-feature{
+  &::after {
+    content: '';
+    box-shadow: 1px 4px 8px $brand-color-primary;
+    
+  }
+
+}

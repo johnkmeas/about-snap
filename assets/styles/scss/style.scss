@@ -70,4 +70,7 @@ CSS file.
 @include foundation-everything($prototype: true);
 @import "global";
 @import "settings";
+@import "variables";
+@import "typography";
+@import "button";
 @import "about_snap";
