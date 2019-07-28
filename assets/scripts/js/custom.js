@@ -7,4 +7,6 @@ jQuery(document).ready(function($) {
     centerMode: true,
     autoplaySpeed: 2000,
   });
+
+
 });

@@ -10,7 +10,32 @@
 
 $masonry-css-column-gap: $global-margin;
 
+@mixin masonry() {
+  column-count: 1;
+  column-gap: $masonry-css-column-gap;
+
+  @include breakpoint(400px) {
+    column-count: 1;
+  }
+
+  @include breakpoint(600px) {
+    column-count: 2;
+  }
+
+  @include breakpoint(800px) {
+    column-count: 3;
+  }
+
+  @include breakpoint(1100px) {
+    column-count: 3;
+  }
+}
+
 .masonry-css {
+  @include masonry;
+}
+
+.masonry-css-- {
   column-count: 1;
   column-gap: $masonry-css-column-gap;
 
@@ -19,15 +44,15 @@ $masonry-css-column-gap: $global-margin;
   }
 
   @include breakpoint(600px) {
-    column-count: 3;
+    column-count: 2;
   }
 
   @include breakpoint(800px) {
-    column-count: 4;
+    column-count: 2;
   }
 
   @include breakpoint(1100px) {
-    column-count: 5;
+    column-count: 3;
   }
 }
 
