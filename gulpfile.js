@@ -16,6 +16,7 @@ const LOCAL_URL = 'http://jointswp.local/';
 
 // Set path to Foundation files
 const FOUNDATION = 'node_modules/foundation-sites';
+const SLICK = 'node_modules/slick-carousel';
 
 // Select Foundation components, remove components project will not use
 const SOURCE = {
@@ -49,6 +50,7 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
 		FOUNDATION + '/dist/js/plugins/foundation.toggler.js',
 		FOUNDATION + '/dist/js/plugins/foundation.tooltip.js',
+    SLICK + '/slick/slick.min.js',
 
 		// Place custom JS here, files will be concantonated, minified if ran with --production
 		'assets/scripts/js/**/*.js',

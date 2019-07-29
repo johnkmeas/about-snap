@@ -10,29 +10,43 @@
 get_header(); ?>
 			
 	<div class="content">
-	
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 	
 		    <main class="main small-12 medium-8 large-8 cell" role="main">
-		    
-			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			 
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'archive' ); ?>
-				    
-				<?php endwhile; ?>	
-
-					<?php joints_page_navi(); ?>
-					
-				<?php else : ?>
-											
-					<?php get_template_part( 'parts/content', 'missing' ); ?>
-						
-				<?php endif; ?>
+		    	<!-- Shout Out -->
+				  <div class="column text-center padding-top-3">
+				    <b>
+				    	<h1>
+					      Our Blog
+				    	</h1>
+				    </b>
+				  </div>
+	    		<section class="section">	
+					 	<div class="grid-container">
+					    <?php 
+					    	if (have_posts()) : ?>
+								 	<div class="masonry-css">
+					    	<?php while (have_posts()) : the_post(); ?>
+							    <div class="masonry-css-item">
+							      <!-- To see additional archive styles, visit the /parts directory -->
+										<?php get_template_part( 'parts/loop', 'archive' ); ?>
+							    </div>
+							<?php endwhile; ?>	
+									<?php joints_page_navi(); ?>
+							  </div>
+								
+							<?php else : ?>
+														
+								<?php get_template_part( 'parts/content', 'missing' ); ?>
+									
+							<?php endif; ?>
+						</div>
+	    		</section>
 																								
 		    </main> <!-- end #main -->
-		    
-		    <?php get_sidebar(); ?>
+		    <div class="padding-vertical-3 small-12 medium-4 large-4 cell">
+			    <?php get_sidebar(); ?>
+		    </div>
 
 		</div> <!-- end #inner-content -->
 

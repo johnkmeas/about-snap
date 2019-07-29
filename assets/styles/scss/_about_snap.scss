@@ -1,0 +1,163 @@
+.ytp-chrome-top {
+    opacity: 0;
+}
+
+.top-bar {
+  background: $brand-color-primary;
+
+  ul {
+    background: none;
+  }
+}
+
+.content {
+  background: $bg-default;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.card-feature {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 4px 8px $brand-color-primary;
+}
+
+.bg-gallery {
+  // box-shadow: -100px 20px 1px 50px #ffebdf;
+}
+// img {
+//   box-shadow: 20px 35px 1px 20px #fff5c8;
+// }
+
+.section {
+  $pad: 1.2rem;
+   padding: $pad 0;
+  @include breakpoint(400px) {
+      padding: $pad 0;
+  }
+
+  @include breakpoint(600px) {
+    padding: $pad * 2 0;
+  }
+
+  @include breakpoint(800px) {
+    padding: $pad * 3 0;
+  }
+
+  @include breakpoint(1100px) {
+    padding: $pad * 4 0;
+  }
+  
+}
+
+.section-bottom {
+  $pad: 1.2rem;
+   padding: 0 0 $pad 0;
+
+  @include breakpoint(400px) {
+    padding: 0 0 $pad 0;
+  }
+
+  @include breakpoint(600px) {
+    padding: 0 0 $pad*2 0;
+  }
+
+  @include breakpoint(800px) {
+    padding: 0 0 $pad * 3 0;
+  }
+
+  @include breakpoint(1100px) {
+    padding: 0 0 $pad * 4 0;
+  }
+}
+
+.callout {
+  $pad: 1rem;
+  background: none;
+  border: none;
+  &.large {
+    padding: 0 0 $pad 0;
+    @include breakpoint(400px) {
+        padding: 0 0 $pad * 1.5 0;
+    }
+
+    @include breakpoint(600px) {
+      padding: 0 0 $pad * 3 0;
+    }
+  }
+}
+
+
+$masonry-css-column-gap: $global-margin;
+
+@mixin masonry() {
+  column-count: 1;
+  column-gap: $masonry-css-column-gap;
+
+  @include breakpoint(400px) {
+    column-count: 1;
+  }
+
+  @include breakpoint(600px) {
+    column-count: 2;
+  }
+
+  @include breakpoint(800px) {
+    column-count: 3;
+  }
+
+  @include breakpoint(1100px) {
+    column-count: 3;
+  }
+}
+
+.masonry-css {
+  @include masonry;
+}
+
+.masonry-css-- {
+  column-count: 1;
+  column-gap: $masonry-css-column-gap;
+
+  @include breakpoint(400px) {
+    column-count: 2;
+  }
+
+  @include breakpoint(600px) {
+    column-count: 2;
+  }
+
+  @include breakpoint(800px) {
+    column-count: 2;
+  }
+
+  @include breakpoint(1100px) {
+    column-count: 3;
+  }
+}
+
+.masonry-css-item {
+  break-inside: avoid;
+  margin-bottom: $masonry-css-column-gap;
+}
+
+.bg-branding {
+  background: linear-gradient(
+    180deg, 
+    $bg-rose 0%, 
+    $bg-rose 50%, 
+    $bg-default 50%, 
+    $bg-default 100%);
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
+
+.bg-rose {
+  background: $bg-rose;
+}

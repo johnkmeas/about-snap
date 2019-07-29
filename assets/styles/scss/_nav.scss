@@ -1,0 +1,76 @@
+.top-bar {
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+
+  .menu .active>a, 
+  .menu .is-active>a {
+    border: none;
+  }
+}
+
+.stick-top-nav {
+  animation: slideDown 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  // transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.header {
+  box-shadow: 1px 6px 14px #8020302e;
+}
+
+.menu .active>a, 
+.menu .is-active>a {
+  border-bottom: 0;
+}
+
+.custom-vertical {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  li {
+    width: 50%;
+  }
+}
+
+.footer {
+  background: #e0929d;
+}
+
+.custom-logo-link {
+  $pad: 100px;
+  width: $pad * 2;
+  @include breakpoint(400px) {
+    width: $pad * 2;
+  }
+
+  @include breakpoint(600px) {
+    width: $pad * 2;
+  }
+
+  @include breakpoint(800px) {
+    width: $pad * 3;
+  }
+
+  @include breakpoint(1100px) {
+    width: $pad * 3.5;
+  }
+}
+
+.top-bar {
+  .top-bar-right.mobile-nav {
+    flex-basis: auto;
+  }
+}
+  
