@@ -169,7 +169,7 @@
                   </div>
 									<?php
 									$contact_submit = get_field('contact_cta_title') ?: 'contact us' ;
-									echo do_shortcode("[contact-form-7 id='162' title='Contact form 1' submit 'contact']"); ?>
+									echo do_shortcode("[contact-form-7 id='195' title='Contact form 1' submit 'contact']"); ?>
 		            </div>
 							
 	            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
