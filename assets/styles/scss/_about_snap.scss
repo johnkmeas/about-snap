@@ -18,7 +18,7 @@
   display: none !important;
 }
 
-.card-feature{
+.card-feature {
   border: none;
   border-radius: 10px;
   box-shadow: 1px 4px 8px $brand-color-primary;
@@ -141,4 +141,23 @@ $masonry-css-column-gap: $global-margin;
 .masonry-css-item {
   break-inside: avoid;
   margin-bottom: $masonry-css-column-gap;
+}
+
+.bg-branding {
+  background: linear-gradient(
+    180deg, 
+    $bg-rose 0%, 
+    $bg-rose 50%, 
+    $bg-default 50%, 
+    $bg-default 100%);
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
+
+.bg-rose {
+  background: $bg-rose;
 }

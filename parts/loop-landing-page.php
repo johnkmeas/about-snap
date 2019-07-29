@@ -87,7 +87,7 @@
   </section>
 
   <!-- Events Section -->
-  <section>
+  <section class="section bg-rose">
 		<div  class="grid-container full">
 			<?php $section_type = 'event'; ?>
 	    <div class="column text-center callout large">
@@ -103,7 +103,9 @@
   </section>
 
   <!-- About Us Section -->
-  <section class="section">
+  <div class="bg-branding"><img src="<?php echo get_template_directory_uri() ?>/assets/images/src/about-snap-logo-full-dark@2x.png" >
+  </div>
+  <section class="section bg-brand-logo">
 		<div class="grid-container full">
       <?php $about = get_field('about_excerpt');
 						$about_title = get_field('about_title');

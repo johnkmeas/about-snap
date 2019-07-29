@@ -47,3 +47,22 @@
 .footer {
   background: #e0929d;
 }
+
+.custom-logo-link {
+  $pad: 100px;
+  @include breakpoint(400px) {
+    width: $pad;
+  }
+
+  @include breakpoint(600px) {
+    width: $pad * 2;
+  }
+
+  @include breakpoint(800px) {
+    width: $pad * 3;
+  }
+
+  @include breakpoint(1100px) {
+    width: $pad * 3.5;
+  }
+}
