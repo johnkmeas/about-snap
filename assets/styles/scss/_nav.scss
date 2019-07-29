@@ -25,6 +25,25 @@
   }
 }
 
-header {
+.header {
   box-shadow: 1px 6px 14px #8020302e;
+}
+
+.menu .active>a, 
+.menu .is-active>a {
+  border-bottom: 0;
+}
+
+.custom-vertical {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  li {
+    width: 50%;
+  }
+}
+
+.footer {
+  background: #e0929d;
 }

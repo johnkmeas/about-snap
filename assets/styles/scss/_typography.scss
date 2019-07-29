@@ -98,6 +98,12 @@ label {
 
 }
 
+p.copyright,
+.footer > *,
+.footer a {
+  color: $bg-default;
+}
+
 .section-subheader {
   > * {
     text-align: center;
