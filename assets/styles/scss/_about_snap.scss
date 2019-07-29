@@ -25,7 +25,7 @@
 }
 
 .bg-gallery {
-  box-shadow: -100px 20px 1px 50px #ffebdf;
+  // box-shadow: -100px 20px 1px 50px #ffebdf;
 }
 // img {
 //   box-shadow: 20px 35px 1px 20px #fff5c8;
@@ -33,7 +33,7 @@
 
 .section {
   $pad: 1.2rem;
-   padding: 0 25px;
+   padding: $pad 0;
   @include breakpoint(400px) {
       padding: $pad 0;
   }
@@ -52,12 +52,33 @@
   
 }
 
+.section-bottom {
+  $pad: 1.2rem;
+   padding: 0 0 $pad 0;
+
+  @include breakpoint(400px) {
+    padding: 0 0 $pad 0;
+  }
+
+  @include breakpoint(600px) {
+    padding: 0 0 $pad*2 0;
+  }
+
+  @include breakpoint(800px) {
+    padding: 0 0 $pad * 3 0;
+  }
+
+  @include breakpoint(1100px) {
+    padding: 0 0 $pad * 4 0;
+  }
+}
+
 .callout {
   $pad: 1rem;
   background: none;
   border: none;
   &.large {
-    padding: 0 0 3rem 0;
+    padding: 0 0 $pad 0;
     @include breakpoint(400px) {
         padding: 0 0 $pad * 1.5 0;
     }

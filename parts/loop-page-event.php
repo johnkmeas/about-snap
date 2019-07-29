@@ -24,8 +24,8 @@ $id = get_the_ID();
 	</header> <!-- end article header -->
 
     <!-- Events Section -->
-    <section>
-      <div>
+    <section class="section">
+      <div class="grid-container full">
         <?php $about = get_field('feature_event');
 
           if( $about ):
@@ -33,27 +33,24 @@ $id = get_the_ID();
           $post = $about;
           setup_postdata( $post );
         ?>
-          <div>
-            <div>
+          <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x">
+            <div class="padding-2 small-12 large-6 medium-6 large-offset-1 cell">
               <h2>Featured <?php echo $page_title; ?> Event</h2>
               <a href="<?php the_permalink(); ?>">More <?php the_title(); ?></a>
-              <div>
-                <?php the_excerpt(); ?>
-              </div>
             </div>
+          </div>
             <?php
               $gallery = get_field('gallery', $post->ID);
               set_query_var('$gallery', null);
               include(locate_template('parts/loop-gallery.php'));
             ?>
-          </div>
           <?php wp_reset_postdata();?>
         <?php endif; ?>
       </div>
     </section>
     <!-- Gallery Section -->
 
-    <section>
+    <section class="section">
         <!-- Shout Out -->
       <div class="column text-center callout large">
         <h2><?php  the_field('main_gallery_title'); ?></h2>

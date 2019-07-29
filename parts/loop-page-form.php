@@ -10,7 +10,7 @@
  <!-- Contact Us -->
   <section>
     <div class="grid-container full">
-      <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
+      <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x" itemprop="text">
 
           <div class="image small-12 large-6 cell">
             <?php the_post_thumbnail('large'); ?>

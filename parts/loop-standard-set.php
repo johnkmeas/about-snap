@@ -25,10 +25,10 @@ if( have_rows('event_set') ):
         <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle align-center" itemprop="text">
           <div class="small-12 large-6 medium-6 cell <?php echo $order_a; ?>">
             <div class="grid-x grid-margin-x grid-padding-x">
-              <div class="small-12 large-10 <?php echo $offset; ?> medium-12 cell page-title">
+              <div class="section small-12 large-10 <?php echo $offset; ?> medium-12 cell page-title">
                 <h3><a href="<?php the_permalink(); ?>"><?php echo $custom_title; ?></a></h3>
                 <?php the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>">Our <?php the_title(); ?> Events</a>
+                <a href="<?php the_permalink(); ?>" class="button">Our <?php the_title(); ?> Events</a>
               </div>
             </div>
           </div>

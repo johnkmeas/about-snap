@@ -39,7 +39,7 @@
       <div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
 		    <div class="small-12 large-6 medium-8 cell">
 					<div class="grid-x grid-margin-x grid-padding-x">
-		      	<div class="small-12 large-10 large-offset-2 medium-12 cell page-title"><?php  the_field('main_content'); ?></div>
+		      	<div class="section small-12 large-10 large-offset-2 medium-12 cell page-title"><?php  the_field('main_content'); ?></div>
 					</div>
 		    </div>
 		    <div class="small-12 large-6 medium-4 cell">
@@ -87,7 +87,7 @@
   </section>
 
   <!-- Events Section -->
-  <section class="section">
+  <section>
 		<div  class="grid-container full">
 			<?php $section_type = 'event'; ?>
 	    <div class="column text-center callout large">
@@ -116,7 +116,7 @@
 				<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle align-center" itemprop="text">
 					<div class="small-12 large-6 medium-6 cell">
 						<div class="grid-x grid-margin-x grid-padding-x">
-							<div class="small-12 large-10 large-offset-2 medium-12 cell page-title">
+							<div class="section small-12 large-10 large-offset-2 medium-12 cell page-title">
 								<h2><?php echo $about_title; ?></h2>
 								<div>
 			            <?php the_excerpt(); ?>
@@ -158,11 +158,13 @@
                 </div>
           			<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
 
-								<div class="image small-12 large-6 medium-6 cell">
+								<div class="image section small-12 large-6 medium-6 cell">
 		              <?php the_post_thumbnail('large'); ?>
 		            </div>
-								<div class="small-12 large-4 medium-6 cell page-title">
-									<div><?php the_excerpt(); ?></div>
+								<div class="small-12 large-4 medium-6 cell large-offset-1 page-title">
+									<div>
+                    <?php the_excerpt(); ?>
+                  </div>
 									<?php
 									$contact_submit = get_field('contact_cta_title') ?: 'contact us' ;
 									echo do_shortcode("[contact-form-7 id='162' title='Contact form 1' submit 'contact']"); ?>

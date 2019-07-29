@@ -91,7 +91,8 @@ h6 {
   font-family: 'Montserrat';
 }
 
-p {
+p,
+label {
   color: $color-dark;
   font-family: 'Raleway';
 
@@ -111,15 +112,6 @@ a,
   &:focus {
     color: $brand-color-primary;
     background: $color-bright;
-  }
-}
-
-h2 {
-  &:asfter {
-    content: '';
-    background: #fae7e7;
-    display: inline-block;
-    display: initial; 
   }
 }
 

@@ -14,33 +14,34 @@ get_header(); ?>
 	
 		    <main class="main small-12 medium-8 large-8 cell" role="main">
 		    	<!-- Shout Out -->
-				  <div class="column text-center callout large">
+				  <div class="column text-center padding-top-3">
 				    <b>
 				    	<h1>
 					      Our Blog
 				    	</h1>
 				    </b>
 				  </div>
-	    	
-				 	<div class="grid-container">
-				    <?php 
-				    	if (have_posts()) : ?>
-							 	<div class="masonry-css">
-				    	<?php while (have_posts()) : the_post(); ?>
-						    <div class="masonry-css-item">
-						      <!-- To see additional archive styles, visit the /parts directory -->
-									<?php get_template_part( 'parts/loop', 'archive' ); ?>
-						    </div>
-						<?php endwhile; ?>	
-								<?php joints_page_navi(); ?>
-						  </div>
-							
-						<?php else : ?>
-													
-							<?php get_template_part( 'parts/content', 'missing' ); ?>
+	    		<section class="section">	
+					 	<div class="grid-container">
+					    <?php 
+					    	if (have_posts()) : ?>
+								 	<div class="masonry-css">
+					    	<?php while (have_posts()) : the_post(); ?>
+							    <div class="masonry-css-item">
+							      <!-- To see additional archive styles, visit the /parts directory -->
+										<?php get_template_part( 'parts/loop', 'archive' ); ?>
+							    </div>
+							<?php endwhile; ?>	
+									<?php joints_page_navi(); ?>
+							  </div>
 								
-						<?php endif; ?>
-					</div>
+							<?php else : ?>
+														
+								<?php get_template_part( 'parts/content', 'missing' ); ?>
+									
+							<?php endif; ?>
+						</div>
+	    		</section>
 																								
 		    </main> <!-- end #main -->
 		    <div class="padding-vertical-3 small-12 medium-4 large-4 cell">

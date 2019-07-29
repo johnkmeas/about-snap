@@ -1,11 +1,54 @@
-
-.button {
+@mixin snapButton {
   background: none;
   border: 2px solid $color-bright;
+  border-radius: 4px;
   color: $color-bright;
+  font-size: 1.1rem;
+  margin-top: 0.9rem;
 
   &:hover,
   &:focus {
     background: $color-bright;
   }
+}
+
+.button {
+  @include snapButton;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.wpcf7-submit {
+  @include button;
+  @include snapButton;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.wpcf7-text,
+textarea {
+  border: 1px solid $color-input-border;
+}
+
+[type=color]:focus,
+[type=date]:focus,
+[type=datetime-local]:focus,
+[type=datetime]:focus,
+[type=email]:focus,
+[type=month]:focus,
+[type=number]:focus,
+[type=password]:focus,
+[type=search]:focus,
+[type=tel]:focus,
+[type=text]:focus,
+[type=time]:focus,
+[type=url]:focus,
+[type=week]:focus,
+textarea:focus {
+  border: 1px solid $color-bright;
+}
+
+a:focus, a:hover {
+  background: none;
+  color: $color-hyper-glow;
 }
