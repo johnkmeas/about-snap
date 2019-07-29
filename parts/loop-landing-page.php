@@ -103,7 +103,7 @@
   </section>
 
   <!-- About Us Section -->
-  <div class="bg-branding"><img src="<?php echo get_template_directory_uri() ?>/assets/images/src/about-snap-logo-full-dark@2x.png" >
+  <div class="bg-branding"><img src="<?php echo get_template_directory_uri() ?>/assets/images/src/about-to-snap-logo-full-dark@2x.png" >
   </div>
   <section class="section bg-brand-logo">
 		<div class="grid-container full">
@@ -122,7 +122,7 @@
 								<h2><?php echo $about_title; ?></h2>
 								<div>
 			            <?php the_excerpt(); ?>
-			            <a href="<?php the_permalink(); ?>">More <?php the_title(); ?></a>
+			            <a class="button" href="<?php the_permalink(); ?>">More <?php the_title(); ?></a>
 			          </div>
 							</div>
 						</div>
