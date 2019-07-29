@@ -50,8 +50,9 @@
 
 .custom-logo-link {
   $pad: 100px;
+  width: $pad * 2;
   @include breakpoint(400px) {
-    width: $pad;
+    width: $pad * 2;
   }
 
   @include breakpoint(600px) {
@@ -66,3 +67,10 @@
     width: $pad * 3.5;
   }
 }
+
+.top-bar {
+  .top-bar-right.mobile-nav {
+    flex-basis: auto;
+  }
+}
+  

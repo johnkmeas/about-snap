@@ -1,19 +1,4 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
-
-  <header class="article-header">
-
-    <?php 
-      $page_title = get_the_title();
-      $hero_title = '<h1 class="page-title">' .$page_title. '</h1>';
-      
-      $hero_content = $hero_title . get_the_content();
-
-      $hero_media = get_the_post_thumbnail($id, 'large'); 
-      set_query_var('$hero_content', '$hero_media');
-    ?>
-
-    <?php include(locate_template('parts/content-hero.php')); ?>
-  </header> <!-- end article header -->
   <!-- FAQ Accordion -->
   <section>
     <div  class="grid-container full">
