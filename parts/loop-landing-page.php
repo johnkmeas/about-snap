@@ -169,7 +169,16 @@
                   </div>
 									<?php
 									$contact_submit = get_field('contact_cta_title') ?: 'contact us' ;
-									echo do_shortcode("[contact-form-7 id='162' title='Contact form 1' submit 'contact']"); ?>
+                  $contact_form = (
+                    do_shortcode("[contact-form-7 id='195' title='Contact form 1' submit 'contact']"));
+                  $contact_form_local = (
+                    do_shortcode("[contact-form-7 id='162' title='Contact form 1' submit 'contact']"));
+
+                  if($contact_form != '[contact-form-7 404 "Not Found"]') {
+                    echo $contact_form;
+                  }else if ($contact_form_local != '[contact-form-7 404 "Not Found"]')
+									   echo $contact_form_local;
+                  ?>
 		            </div>
 							
 	            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly

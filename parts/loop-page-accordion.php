@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
   <!-- FAQ Accordion -->
-  <section>
+  <section class="section">
     <div  class="grid-container full">
       <div class="inner-content grid-x grid-margin-x grid-padding-x">
         <div class="small-12 large-8 large-offset-2 medium-6 cell">
