@@ -10,9 +10,19 @@
    -->
   <header class="section">
   	<?php  
-	  	$hero_content = get_field('hero_content');
-	  	$hero_media = get_field('hero_media'); 
-	  	set_query_var('$hero_content', '$hero_media');
+		$hero_content = get_field('hero_content');
+	  	$media = get_field('hero_media'); 
+		  if($media) {
+        $media_type = $media['media_type'];
+        if($media_type == 'embed'){
+          $hero_media = $media['embed'];
+        } elseif($media_type == 'mp4'){
+          $hero_media = $media['mp4']['url'];
+        } else {
+          $hero_media = get_the_post_thumbnail(the_ID(), 'large'); 
+        }
+      }
+	  	set_query_var('$hero_content', '$hero_media', '$media_type');
   	?>
 
 		<?php include(locate_template('parts/content-hero.php')); ?>

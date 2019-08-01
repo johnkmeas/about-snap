@@ -9,7 +9,20 @@
       </div>
     </div>
     <div class="small-12 large-6 medium-6 cell">
-      <?php echo $hero_media; ?>
+    
+      <?php
+        if($media_type == 'mp4'){?>
+        <video controls autoplay muted>
+
+          <source src="<?php echo $hero_media; ?>"
+                  type="video/mp4">
+
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      <?php } else {
+        echo $hero_media; 
+      } 
+      ?>
     </div>
   </div>
 </div>
