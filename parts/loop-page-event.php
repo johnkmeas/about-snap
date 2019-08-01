@@ -2,7 +2,6 @@
 /**
  * Template part for displaying page content in page.php
  */
-$id = get_the_ID();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
@@ -23,7 +22,7 @@ $id = get_the_ID();
         } elseif($media_type == 'mp4'){
           $hero_media = $media['mp4']['url'];
         } else {
-          $hero_media = get_the_post_thumbnail(the_ID(), 'large'); 
+          $hero_media = get_the_post_thumbnail(get_the_ID(), 'large'); 
         }
       }
 	  	set_query_var('$hero_content', '$hero_media', '$media_type');
