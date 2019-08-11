@@ -8,8 +8,8 @@
             if( !empty($image) ): ?>
               <div class="cell">
                 <div class="card card-feature">
-                  <div class="grid-x grid-padding-x align-center">
-                    <img class="" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt'] ?>" />
+                  <div class="grid-x grid-padding-x align-center padding-top-2">
+                    <img class="" src="<?php echo $image['sizes']['gallery-thumbnail']; ?>" alt="<?php echo $image['alt'] ?>" />
                   </div>
                   <div class="card-section">
                     <?php echo $content; ?>
