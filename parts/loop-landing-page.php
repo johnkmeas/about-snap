@@ -166,7 +166,7 @@
               setup_postdata( $post );  ?>
 
                 <div class="text-center callout large">
-                  <h2 class="subheader"><?php the_title(); ?></h2>
+                  <h2><?php the_title(); ?></h2>
                 </div>
           			<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x" itemprop="text">
 
