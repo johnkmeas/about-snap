@@ -1,5 +1,5 @@
 <?php
-  $size = 'large'; // (thumbnail, medium, large, full or custom size)
+  $size = 'gallery-thumbnail'; // (thumbnail, medium, large, full or custom size)
 
   if( $gallery ): ?>
     <ul class="event-gallery slick-slider bg-gallery">

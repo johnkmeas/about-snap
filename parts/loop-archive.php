@@ -1,8 +1,5 @@
 <?php
 /*
-Template Name: Events
-
-
  * Template part for displaying posts
  *
  * Used for single, index, archive, search.
@@ -11,7 +8,16 @@ Template Name: Events
 
 <article class="card"" id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
 
-	<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
+	<a href="<?php the_permalink() ?>">
+		<?php
+			if( has_post_thumbnail() ){
+				the_post_thumbnail('full');
+			} else { ?>
+				<img src="<?php echo get_template_directory_uri() ?>/assets/images/src/about-to-snap-logo-full-dark@2x.png" >
+			<?php
+			}
+			?>
+	</a>
 	<section class="card-section" itemprop="text">
 	<header class="article-header">
 		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>

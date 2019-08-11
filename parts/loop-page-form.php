@@ -3,7 +3,7 @@
   <header class="article-header">
     <div  class="grid-container full">
       <div class="large-12 column text-center callout large">
-        <h2 class="subheader"><?php the_title(); ?></h2>
+        <h1><?php the_title(); ?></h1>
       </div>
     </div>
   </header> <!-- end article header -->
