@@ -7,7 +7,7 @@
 ?>
 
 <div class="top-bar" id="top-bar-menu">
-	<div class="top-bar-left float-left">
+	<div class="snap-top-bar-mobile-logo top-bar-left">
 		<ul class="menu">
 			<li><?php echo the_custom_logo(); ?>
 			</li>
@@ -16,7 +16,7 @@
 	<div class="top-bar-right show-for-medium">
 		<?php joints_top_nav(); ?>	
 	</div>
-	<div class="mobile-nav top-bar-right float-right show-for-small-only">
+	<div class="snap-top-bar-mobile-menu custom- mobile-nav top-bar-right show-for-small-only">
 		<ul class="menu">
 			<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
 			<li><a data-toggle="off-canvas"><?php _e( 'Menu', 'jointswp' ); ?></a></li>

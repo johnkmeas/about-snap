@@ -1,4 +1,5 @@
 .top-bar {
+  background: $brand-color-primary;
   padding-bottom: 0.8rem;
   padding-top: 0.8rem;
 
@@ -6,9 +7,31 @@
   .menu .is-active>a {
     border: none;
   }
+
+  ul {
+    background: none;
+  }
 }
 
-.footer {
+.off-canvas {
+  background: $bg-footer;
+  a {
+    color: $bg-default;
+  }
+}
+
+.snap-top-bar-mobile-menu  {
+  max-width: min-content;
+}
+
+.snap-top-bar-mobile-logo {
+  @include breakpoint(400px) {
+    max-width: 50% !important;
+  }
+}
+
+.footer,
+.off-canvas {
   .menu .active>a, 
   .menu .is-active>a {
     color: $color-mustard;

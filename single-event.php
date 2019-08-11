@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 /**
  * The template for displaying all single posts and attachments
  */
@@ -6,10 +6,10 @@
 get_header(); ?>
       
 <div class="content">
-single evnt
-  <div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-    <main class="main small-12 medium-8 large-8 cell" role="main">
+  <div class="inner-content">
+
+    <main role="main">
     
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     
