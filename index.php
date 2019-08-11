@@ -44,10 +44,19 @@ get_header(); ?>
 	    		</section>
 																								
 		    </main> <!-- end #main -->
-		    <div class="padding-vertical-3 small-12 medium-4 large-4 cell">
 			    <?php get_sidebar(); ?>
-		    </div>
+			<!-- CTA **	requires get_option for index.php 
+						and will pull cta from blog if this 
+						is with include anywhere else** 
+			-->
+			<div class="large-12 cell">
+				<?php
+					$cta_content = get_field('global_cta', get_option('page_for_posts'));
 
+					set_query_var('$cta_content', null);
+					include(locate_template('parts/content-cta.php'));
+				?>   
+			</div>
 		</div> <!-- end #inner-content -->
 
 	</div> <!-- end #content -->

@@ -168,7 +168,7 @@
                 <div class="text-center callout large">
                   <h2 class="subheader"><?php the_title(); ?></h2>
                 </div>
-          			<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x align-middle" itemprop="text">
+          			<div class="entry-content inner-content grid-x grid-margin-x grid-padding-x" itemprop="text">
 
 								<div class="image section small-12 large-6 medium-6 cell">
 		              <?php the_post_thumbnail('large'); ?>
@@ -196,7 +196,15 @@
 	        }
 	      ?>
 		</div>
-  </section>
+  	</section>
+	<!-- CTA -->
+	<section>
+		<?php
+		$cta_content = get_field('global_cta'); 
+		set_query_var('$cta_content', null);
+		include(locate_template('parts/content-cta.php'));
+		?>
+	</section>
 
 	<footer class="article-footer">
 		 <?php wp_link_pages(); ?>

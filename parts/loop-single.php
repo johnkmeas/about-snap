@@ -6,14 +6,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
-	<header class="article-header">	
+	<header class="article-header text-center padding-top-3">	
 		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 		<?php get_template_part( 'parts/content', 'byline' ); ?>
     </header> <!-- end article header -->
 					
     <section class="entry-content" itemprop="text">
 		<?php the_post_thumbnail('full'); ?>
-		<?php the_content(); ?>
+		<div class="padding-top-3 padding-bottom-3">
+			<?php the_content(); ?>
+		</div>
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer">

@@ -20,7 +20,14 @@
     <?php include(locate_template('parts/content-hero.php')); ?>
   </header> <!-- end article header -->
 
-						
+  <!-- CTA -->
+	<section>
+      <?php
+      $cta_content = get_field('global_cta'); 
+      set_query_var('$cta_content', null);
+      include(locate_template('parts/content-cta.php'));
+    ?>
+  </section>
 	<footer class="article-footer">
 		 <?php wp_link_pages(); ?>
 	</footer> <!-- end article footer -->

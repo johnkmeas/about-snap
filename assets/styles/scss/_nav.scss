@@ -8,6 +8,13 @@
   }
 }
 
+.footer {
+  .menu .active>a, 
+  .menu .is-active>a {
+    color: $color-mustard;
+  }
+}
+
 .stick-top-nav {
   animation: slideDown 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);;
   position: fixed;
@@ -45,7 +52,7 @@
 }
 
 .footer {
-  background: #e0929d;
+  background: $bg-footer;
 }
 
 .custom-logo-link {

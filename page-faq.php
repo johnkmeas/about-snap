@@ -29,8 +29,13 @@ get_header(); ?>
 
             <?php include(locate_template('parts/loop-page-accordion.php')); ?>
           
-          <?php endwhile; endif; ?>             
-                    
+          <?php endwhile; endif; ?>
+          <!-- CTA -->
+          <?php
+            $cta_content = get_field('global_cta'); 
+            set_query_var('$cta_content', null);
+            include(locate_template('parts/content-cta.php'));
+          ?>
       </main> <!-- end #main -->        
     </div> <!-- end #inner-content -->
 

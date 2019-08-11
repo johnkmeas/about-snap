@@ -68,6 +68,16 @@
       set_query_var('$gallery', null);
       include(locate_template('parts/loop-masonry.php')); ?>
     </section>
+
+    <!-- Final CTA Section -->
+    <?php
+      ob_start();
+
+      the_content();
+      $cta_content = ob_get_clean();
+      set_query_var('$cta_content', null);
+      include(locate_template('parts/content-cta.php'));
+    ?>
   <footer class="article-footer">
      <?php wp_link_pages(); ?>
   </footer> <!-- end article footer -->
